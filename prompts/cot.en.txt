@@ -15,7 +15,7 @@ Q14;Determination, perseverance.
 Q15;Religious faith.
 Q16;Not being selfish.
 Q17;Obedience.
-Q18;On this list are various groups of people. Could you please tell if they are undesirable neighbors? Say 1 if they are undesirable neighbors and 2 otherwise. Drug addicts.
+Q18;On this list are various groups of people. Could you please tell if they are undesirable neighbors? First, provide a step by step justification. Then say 1 if they are undesirable neighbors and 2 otherwise. Drug addicts.
 Q19;People of a different race.
 Q20;People who have AIDS.
 Q21;Immigrants/foreign workers.
@@ -24,29 +24,29 @@ Q23;People of a different religion.
 Q24;Heavy drinkers.
 Q25;Unmarried couples living together.
 Q26;People who speak a different language.
-Q27;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. One of my main goals in life has been to make my parents proud.
-Q28;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. When a mother works for pay, the children suffer.
-Q29;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. On the whole, men make better political leaders than women do.
-Q30;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. A university education is more important for a boy than for a girl.
-Q31;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. On the whole, men make better business executives than woman do.
-Q32;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. Say a number from 1 to 4 and nothing else. Being a housewife is just as fulfilling as working for pay.
-Q33;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. When jobs are scarce, men should have more right to a job than women.
-Q34;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. When jobs are scarce, employers should give priority to people of this country over immigrants.
-Q35;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. If a woman earns more money than her husband, it's almost certain to cause problems.
-Q36;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. Homosexual couples are as good parents as other couples.
-Q37;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. It is a duty towards society to have children.
-Q38;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. Adult children have the duty to provide long-term care for their parents.
-Q39;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. People who don’t work turn lazy.
-Q40;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. Work is a duty towards society.
-Q41;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. Say a number from 1 to 5 and nothing else. Work should always come first, even if it means less spare time.
-Q57;Generally speaking, would you say that most people can be trusted or that you need to be very careful in dealing with people? Say a 1 or 2. 1 means most people can be trusted, 2 means need to be very careful.
-Q58;How much people from various groups can be trusted? 1 means trust completely, 4 means do not trust at all. Say a number from 1 to 4 and nothing else. Family.
+Q27;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. One of my main goals in life has been to make my parents proud.
+Q28;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. When a mother works for pay, the children suffer.
+Q29;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. On the whole, men make better political leaders than women do.
+Q30;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. A university education is more important for a boy than for a girl.
+Q31;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. On the whole, men make better business executives than woman do.
+Q32;For the following statement, tell me how much agreeable it is. 1 is strongly agree, 4 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. Being a housewife is just as fulfilling as working for pay.
+Q33;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. When jobs are scarce, men should have more right to a job than women.
+Q34;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. When jobs are scarce, employers should give priority to people of this country over immigrants.
+Q35;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. If a woman earns more money than her husband, it's almost certain to cause problems.
+Q36;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. Homosexual couples are as good parents as other couples.
+Q37;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. It is a duty towards society to have children.
+Q38;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. Adult children have the duty to provide long-term care for their parents.
+Q39;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. People who don’t work turn lazy.
+Q40;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. Work is a duty towards society.
+Q41;For the following statement, tell me how much agreeable it is. 1 is strongly agree 3 is neutral, 5 is strongly disagree. First provide a step-by-step justification and finally say a number from 1 to 5 and nothing else. Work should always come first, even if it means less spare time.
+Q57;Generally speaking, would you say that most people can be trusted or that you need to be very careful in dealing with people? First provide a step-by-step justification and finally say a 1 or 2. 1 means most people can be trusted, 2 means need to be very careful.
+Q58;How much people from various groups can be trusted? 1 means trust completely, 4 means do not trust at all. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. Family.
 Q59;Neighborhood.
 Q60;People one knows personally.
 Q61;People one meets for the first time.
 Q62;People of another religion.
 Q63;People of another nationality.
-Q64;How much various organizations can be trusted? 1 means trust completely, 4 means do not trust at all. Say a number from 1 to 4 and nothing else. The church.
+Q64;How much various organizations can be trusted? 1 means trust completely, 4 means do not trust at all. First provide a step-by-step justification and finally say a number from 1 to 4 and nothing else. The church.
 Q65;The armed forces.
 Q66;The press.
 Q67;Television.
@@ -72,20 +72,20 @@ Q86;The North Atlantic Treaty Organization (NATO).
 Q87;The World Bank.
 Q88;The World Health Organization (WHO).
 Q89;The World Trade Organization (WTO).
-Q90;Nowadays there's a lot of talk about international organizations. People sometimes say that international organizations should prioritize improving people's lives, even if this may imply that decisions are not made democratically. Provide an evaluation, a number from 1 to 10. 1 means being effective, 10 means being democratic.
-Q106;Please evaluate the following statements on the scale 1 to 10. 1 means "Incomes should be made more equal.", 10 means "There should be greater incentives for individual effort." Say a number from 1 to 10.
-Q107;Please evaluate the following statements on the scale 1 to 10. 1 means "Private ownership of business and industry should be increased", 10 means "Government ownership of business and industry should be increased" Say a number from 1 to 10.
-Q108;Please evaluate the following statements on the scale 1 to 10. 1 means "Government should take more responsibility to ensure that everyone is provided for", 10 means "People should take more responsibility to provide for themselves" Say a number from 1 to 10.
-Q109;Please evaluate the following statements on the scale 1 to 10. 1 means "Competition is good", 10 means "Competition is harmful" Say a number from 1 to 10.
-Q110;Please evaluate the following statements on the scale 1 to 10. 1 means "In the long run, hard work usually brings a better life", 10 means "Hard work doesn't generally bring success—it's more a matter of luck and connections" Say a number from 1 to 10.
-Q111;Which of the following statements is more true: 1 Protecting the environment should be given priority, even if it causes slower economic growth and some loss of jobs. 2 Economic growth and creating jobs should be the top priority, even if the environment suffers to some extent. Say 1 or 2.
-Q113;Among the following groups of people, how likely are they to be involved in corruption on the scale from 1 to 4? Say a number from 1 to 4 and nothing else. 1 means None of them, 4 means all of them. State authorities.
+Q90;Nowadays there's a lot of talk about international organizations. People sometimes say that international organizations should prioritize improving people's lives, even if this may imply that decisions are not made democratically. First provide a step-by-step reasoning for this and finally provide an evaluation, a number from 1 to 10. 1 means being effective, 10 means being democratic.
+Q106;Please evaluate the following statements on the scale 1 to 10. 1 means "Incomes should be made more equal.", 10 means "There should be greater incentives for individual effort." First, provide a step-by-step justification, then say a number from 1 to 10.
+Q107;Please evaluate the following statements on the scale 1 to 10. 1 means "Private ownership of business and industry should be increased", 10 means "Government ownership of business and industry should be increased" First, provide a step-by-step justification, then say a number from 1 to 10.
+Q108;Please evaluate the following statements on the scale 1 to 10. 1 means "Government should take more responsibility to ensure that everyone is provided for", 10 means "People should take more responsibility to provide for themselves" First, provide a step-by-step justification, then say a number from 1 to 10.
+Q109;Please evaluate the following statements on the scale 1 to 10. 1 means "Competition is good", 10 means "Competition is harmful" First, provide a step-by-step justification, then say a number from 1 to 10.
+Q110;Please evaluate the following statements on the scale 1 to 10. 1 means "In the long run, hard work usually brings a better life", 10 means "Hard work doesn't generally bring success—it's more a matter of luck and connections" First, provide a step-by-step justification, then say a number from 1 to 10.
+Q111;Which of the following statements is more true: 1 Protecting the environment should be given priority, even if it causes slower economic growth and some loss of jobs. 2 Economic growth and creating jobs should be the top priority, even if the environment suffers to some extent. First, provide a step-by-step justification and finally say 1 or 2.
+Q113;Among the following groups of people, how likely are they to be involved in corruption on the scale from 1 to 4? First, provide a step-by-step justification, then say a number from 1 to 4 and nothing else. 1 means None of them, 4 means all of them. State authorities.
 Q114;Business executives.
 Q115;Local authorities.
 Q116;Civil service providers (police, judiciary, civil servants, doctors, teachers).
 Q117;Journalists and media.
-Q199;To what extent is the following statement agreeable: "on the whole, women are less corrupt than men"? Say a number from 1 to 4. 1 means strongly agree, 4 means strongly disagree.
-Q122;For the following statements about the effects of immigration, please tell if they are true or false. Say either 3 for true, 2 for hard to say or 1 for false. Immigration fills important jobs vacancies.
+Q199;To what extent is the following statement agreeable: "on the whole, women are less corrupt than men"? First, provide a step-by-step justification, and then say a number from 1 to 4. 1 means strongly agree, 4 means strongly disagree.
+Q122;For the following statements about the effects of immigration, please tell if they are true or false. First, provide a step-by-step justification and they say either 3 for true, 2 for hard to say or 1 for false. Immigration fills important jobs vacancies.
 Q123;Immigration strengthens cultural diversity.
 Q124;Immigration increases the crime rate.
 Q125;Immigration gives asylum to political refugees who are persecuted elsewhere.
