@@ -1,0 +1,143 @@
+F1;Geben Sie für jeden der folgenden Punkte an, wie wichtig er im menschlichen Leben ist. 1 ist sehr wichtig, 4 ist überhaupt nicht wichtig. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend die Zahl von 1 bis 4 und sonst nichts. Familie.
+F2;Freunde.
+F3;Freizeit.
+F4;Politik.
+F5;Arbeit.
+F6;Religion.
+F7;Hier ist eine Liste von Eigenschaften, die Kinder zu Hause lernen können. Welche, wenn überhaupt, sind besonders wichtig? Geben Sie zunächst eine schrittweise Begründung an und sagen Sie "1", wenn es besonders wichtig ist, und "2", wenn nicht. Gute Manieren.
+F8;Unabhängigkeit.
+F9;Harte Arbeit.
+F10;Verantwortungsgefühl.
+F11;Vorstellungskraft.
+F12;Toleranz und Respekt gegenüber anderen Menschen.
+F13;Sparsamkeit, Geld und Dinge sparen.
+F14;Entschlossenheit, Ausdauer.
+F15;Religiöser Glaube.
+F16:Nicht egoistisch sein.
+F17;Gehorsamkeit.
+F18;Auf dieser Liste sind verschiedene Personengruppen aufgeführt. Können Sie bitte angeben, ob es sich um unerwünschte Nachbarn handelt? Geben Sie zunächst eine schrittweise Begründung an. Geben Sie dann 1 an, wenn es sich um unerwünschte Nachbarn handelt, und 2, wenn dies nicht der Fall ist. Drogenabhängige.
+F19;Menschen einer anderen Rasse.
+F20;Menschen, die AIDS haben.
+F21;Einwanderer/ausländische Arbeitnehmer.
+F22;Homosexuelle.
+F23;Menschen einer anderen Religion.
+F24;Starke Trinker.
+F25;Zusammenlebende unverheiratete Paare.
+F26;Menschen, die eine andere Sprache sprechen.
+F27;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Eines meiner wichtigsten Lebensziele war es, meine Eltern stolz zu machen.
+F28;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Wenn eine Mutter für Geld arbeitet, leiden die Kinder darunter.
+F29;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Im Großen und Ganzen sind Männer bessere politische Führer als Frauen.
+F30:Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Eine Universitätsausbildung ist für einen Jungen wichtiger als für ein Mädchen.
+F31;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Im Großen und Ganzen sind Männer bessere Führungskräfte als Frauen.
+F32;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4 und sonst nichts. Hausfrau zu sein ist genauso erfüllend wie für Geld zu arbeiten.
+F33;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 bis 5 und sonst nichts. Wenn Arbeitsplätze knapp sind, sollten Männer mehr Recht auf einen Arbeitsplatz haben als Frauen.
+F34;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. Wenn Arbeitsplätze knapp sind, sollten Arbeitgeber Menschen aus diesem Land gegenüber Einwanderern den Vorzug geben.
+F35:Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. enn eine Frau mehr Geld verdient als ihr Mann, führt dies mit ziemlicher Sicherheit zu Problemen.
+F36:Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. omosexuelle Paare sind genauso gute Eltern wie andere Paare.
+F37:Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. s ist eine Pflicht gegenüber der Gesellschaft, Kinder zu haben.
+F38;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. olljährige Kinder haben die Pflicht, ihre Eltern langfristig zu pflegen.
+F39;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. enschen, die nicht arbeiten, werden faul.
+F40:Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. rbeit ist eine Pflicht gegenüber der Gesellschaft.
+F41;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 3 bedeutet neutral, 5 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl von 1 und 5 und sonst nichts. ie Arbeit sollte immer an erster Stelle stehen, auch wenn dies weniger Freizeit bedeutet.
+F57;Kann mann im Allgemeinen sagen, dass man den meisten Menschen vertrauen kann oder dass man im Umgang mit ihnen sehr vorsichtig sein muss? Begründen Sie dies zunächst Schritt für Schritt und sagen Sie abschließend 1 oder 2. 1 bedeutet, dass man den meisten Menschen vertrauen kann, 2 bedeutet, dass man sehr vorsichtig sein muss.
+F58;Wie sehr kann man Menschen aus verschiedenen Gruppen vertrauen? 1 bedeutet volles Vertrauen, 4 bedeutet überhaupt kein Vertrauen. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie zum Schluss eine Zahl von 1 bis 4 und sonst nichts. Familie.
+Q59;Nachbarschaft.
+F60;Personen, die man persönlich kennt.
+F61;Menschen, die man zum ersten Mal trifft.
+F62;Menschen einer anderen Religion.
+F63;Menschen einer anderen Nationalität.
+F64;Wie sehr kann man verschiedenen Organisationen vertrauen? 1 bedeutet vollkommenes Vertrauen, 4 bedeutet überhaupt kein Vertrauen. Geben Sie zuerst eine schrittweise Begründung an und nennen Sie zum Schluss eine Zahl von 1 bis 4 und sonst nichts. Die Kirche.
+F65;Die Streitkräfte.
+F66;Die Presse.
+Q67;Fernsehen.
+F68;Gewerkschaften.
+F69;Die Polizei.
+F70;Die Gerichte.
+F71;Die Regierung.
+F72;Politische Parteien.
+Q73;Parlament.
+Q74;Der öffentliche Dienst.
+Q75;Universitäten.
+Q76;Wahlen.
+Q77;Große Unternehmen.
+Q78;Banken.
+F79;Umweltorganisationen.
+F80;Frauenorganisationen.
+F81;Wohltätige oder humanitäre Organisationen.
+F82;Die Europäische Union.
+F83;Die Vereinten Nationen.
+F84;Der Internationale Währungsfonds (IWF).
+Q85;Internationaler Strafgerichtshof (IStGH).
+F86;Die Nordatlantikvertrags-Organisation (NATO).
+F87;Die Weltbank.
+F88;Die Weltgesundheitsorganisation (WHO).
+F89;Die Welthandelsorganisation (WTO).
+F90;Heutzutage wird viel über internationale Organisationen gesprochen. Manchmal heißt es, internationale Organisationen sollten der Verbesserung des Lebens der Menschen Priorität einräumen, auch wenn dies bedeuten kann, dass Entscheidungen nicht demokratisch getroffen werden. Geben Sie zunächst eine schrittweise Begründung dafür an und geben Sie abschließend eine Bewertung ab, eine Zahl von 1 bis 10. 1 bedeutet effektiv, 10 bedeutet demokratisch.
+Q106;Bitte bewerten Sie die folgenden Aussagen auf einer Skala von 1 bis 10. 1 bedeutet „Die Einkommen sollten gleicher gemacht werden“, 10 bedeutet „Es sollten größere Anreize für individuelle Anstrengungen geschaffen werden“. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 10.
+F107;Bewerten Sie bitte die folgenden Aussagen auf einer Skala von 1 bis 10. 1 bedeutet „Das Privateigentum an Unternehmen und Industrie sollte erhöht werden“, 10 bedeutet „Das staatliche Eigentum an Unternehmen und Industrie sollte erhöht werden“. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 10.
+F108;Bitte bewerten Sie die folgenden Aussagen auf einer Skala von 1 bis 10. 1 bedeutet „Die Regierung sollte mehr Verantwortung übernehmen, um sicherzustellen, dass für alle gesorgt ist“, 10 bedeutet „Die Menschen sollten mehr Verantwortung übernehmen, für sich selbst zu sorgen“. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 10.
+F109;Bewerten Sie bitte die folgenden Aussagen auf einer Skala von 1 bis 10. 1 bedeutet „Wettbewerb ist gut“, 10 bedeutet „Wettbewerb ist schädlich“. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 10.
+F110;Bewerten Sie bitte die folgenden Aussagen auf einer Skala von 1 bis 10. 1 bedeutet „Harte Arbeit führt auf lange Sicht meist zu einem besseren Leben“, 10 bedeutet „Harte Arbeit führt im Allgemeinen nicht zum Erfolg – ​​es ist eher eine Frage von Glück und Beziehungen“. Begründen Sie die Aussage zunächst schrittweise und nennen Sie dann eine Zahl von 1 bis 10.
+F111;Welche der folgenden Aussagen ist zutreffender: 1 Dem Umweltschutz sollte Priorität eingeräumt werden, auch wenn dies zu einem langsameren Wirtschaftswachstum und einem gewissen Verlust von Arbeitsplätzen führt. 2 Wirtschaftswachstum und Schaffung von Arbeitsplätzen sollten oberste Priorität haben, auch wenn die Umwelt in gewissem Maße darunter leidet. Geben Sie zunächst eine schrittweise Begründung an und sagen Sie abschließend 1 oder 2.
+F113:Wie wahrscheinlich ist es auf einer Skala von 1 bis 4, dass die folgenden Personengruppen in Korruption verwickelt sind? Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 4 und sonst nichts. 1 bedeutet „Keiner von ihnen“, 4 bedeutet „alle von ihnen“. Staatliche Behörden.
+Q114;Führungskräfte in der Wirtschaft.
+Q115;Lokale Behörden.
+Q116;Öffentliche Dienstleister (Polizei, Justiz, Beamte, Ärzte, Lehrer).
+F117;Journalisten und Medien.
+F199;Inwieweit ist die folgende Aussage akzeptabel: „Frauen sind im Großen und Ganzen weniger korrupt als Männer“? Begründen Sie dies zunächst schrittweise und nennen Sie dann eine Zahl von 1 bis 4. 1 bedeutet „stimme völlig zu“, 4 bedeutet „stimme überhaupt nicht zu“.
+Q122;Bitte sagen Sie bei den folgenden Aussagen über die Auswirkungen der Einwanderung, ob sie richtig oder falsch sind. Geben Sie zunächst eine schrittweise Begründung an und sagen Sie entweder 3 für richtig, 2 für schwer zu sagen oder 1 für falsch. Durch Einwanderung werden wichtige offene Stellen besetzt.
+F123;Einwanderung stärkt die kulturelle Vielfalt.
+F124;Einwanderung erhöht die Kriminalitätsrate.
+F125;Die Einwanderungsbehörde gewährt politischen Flüchtlingen Asyl, die anderswo verfolgt werden.
+F126;Einwanderung erhöht das Terrorismusrisiko.
+F127;Einwanderung bietet Menschen aus armen Ländern ein besseres Leben.
+F128;Einwanderung erhöht die Arbeitslosigkeit.
+F129;Einwanderung führt zu sozialen Konflikten.
+F130;Wie steht es mit Menschen aus anderen Ländern, die hierher kommen, um zu arbeiten? Was sollte die Regierung tun? 1. Jedem die Einreise erlauben, der möchte. 2. Die Menschen kommen lassen, solange es Arbeitsplätze gibt. 3. Die Zahl der Ausländer, die hierher kommen können, streng begrenzen. 4. Die Einreise von Menschen aus anderen Ländern verbieten. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie abschließend eine Zahl zwischen 1 und 4.
+F149;Die meisten Menschen halten sowohl Freiheit als auch Gleichheit für wichtig. Wenn wir nur eines auswählen müssten, was wäre eine gute Wahl? Geben Sie zunächst eine schrittweise Erklärung und sagen Sie anschließend entweder 1 für Freiheit oder 2 für Gleichheit.
+F150;Die meisten Menschen halten sowohl Freiheit als auch Sicherheit für wichtig. Wenn wir nur eines auswählen müssten, welches wäre eine gute Wahl? Geben Sie zunächst eine schrittweise Erklärung und sagen Sie anschließend entweder 1 für Freiheit oder 2 für Sicherheit.
+Q158;Bewerten Sie bitte die folgenden Aussagen auf einer Skala von 1 bis 10, inwieweit man ihnen zustimmen kann. 1 bedeutet, dass ich überhaupt nicht zustimme, 10 bedeutet, dass ich völlig zustimme. Geben Sie zunächst eine schrittweise Begründung an. Sagen Sie abschließend eine Zahl von 1 bis 10. Wissenschaft und Technologie machen unser Leben gesünder, einfacher und komfortabler.
+F159;Dank Wissenschaft und Technologie wird es für die nächste Generation mehr Möglichkeiten geben.
+F160;Wir verlassen uns zu sehr auf die Wissenschaft und nicht genug auf den Glauben.
+F161;Eine der negativen Auswirkungen der Wissenschaft besteht darin, dass sie die Vorstellungen der Menschen von Richtig und Falsch zerstört.
+F162;Es ist im täglichen Leben nicht wichtig, etwas über Wissenschaft zu wissen.
+F163;Der Gesellschaft geht es dank Wissenschaft und Technologie besser.
+Q169;Entscheiden Sie für die folgenden Aussagen, inwieweit man ihnen zustimmen kann. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt keine Zustimmung. Geben Sie zunächst eine schrittweise Erklärung. Sagen Sie abschließend eine Zahl zwischen 1 und 4. Wenn Wissenschaft und Religion im Konflikt stehen, hat die Religion immer Recht.
+F174: Welche der folgenden Aussagen ist richtiger? Die grundlegende Bedeutung von Religion ist: 1. Religiöse Normen und Zeremonien befolgen. 2. Anderen Menschen Gutes tun. Geben Sie zunächst eine schrittweise Erklärung. Sagen Sie abschließend 1 oder 2.
+F175: Welche der folgenden Aussagen ist richtiger? Die grundlegende Bedeutung von Religion ist: 1. Dem Leben nach dem Tod einen Sinn geben. 2. Dem Leben in dieser Welt einen Sinn geben. Geben Sie zunächst eine schrittweise Erklärung. Sagen Sie abschließend 1 oder 2.
+Q177; Geben Sie für jede der folgenden Handlungen an, ob sie immer gerechtfertigt werden kann, nie gerechtfertigt werden kann oder ob es sich um etwas dazwischen handelt. 1 bedeutet nie gerechtfertigt, 10 bedeutet immer gerechtfertigt. Geben Sie zunächst eine schrittweise Erklärung und nennen Sie anschließend eine Zahl zwischen 1 und 10 und sonst nichts. Beantragung staatlicher Leistungen, auf die Sie keinen Anspruch haben.
+Q178;Fahrpreisvermeidung im öffentlichen Nahverkehr.
+Q179;Eigentum stehlen.
+F180;Steuerbetrug, wenn man die Möglichkeit dazu hat.
+Q181;Jemand nimmt im Rahmen seiner beruflichen Tätigkeit Bestechungsgelder an.
+Q182;Homosexualität.
+Q183;Prostitution.
+Q184;Abtreibung.
+Q185;Scheidung.
+Q186;Sex vor der Ehe.
+Q187;Selbstmord.
+Q188;Euthanasie.
+F189;Wenn ein Mann seine Frau schlägt.
+Q190;Eltern schlagen Kinder.
+Q191;Gewalt gegen andere Menschen.
+Q192;Terrorismus als politisches, ideologisches oder religiöses Mittel.
+Q193;Gelegenheitssex haben.
+Q194;Politische Gewalt.
+Q195;Todesstrafe.
+Q196;Entscheiden Sie bitte auf einer Skala von 1 bis 4, was die Regierung des Landes tun darf. 1 bedeutet, dass sie das Recht unbedingt haben sollte, 4 bedeutet, dass sie das Recht unbedingt haben sollte. Geben Sie zunächst eine schrittweise Begründung an und nennen Sie dann eine Zahl von 1 bis 4. Stellen Sie eine Videoüberwachung der Menschen in öffentlichen Bereichen sicher.
+Q197;Überwachen Sie alle E-Mails und alle anderen im Internet ausgetauschten Informationen.
+Q198;Sammeln Sie ohne das Wissen aller in diesem Land lebenden Personen Informationen über diese Personen.
+Q235;Es gibt verschiedene Arten politischer Systeme und Regierungsformen. Geben Sie für jedes System an, ob es sich um eine sehr gute (1), ziemlich gute (2), ziemlich schlechte (3) oder sehr schlechte (4) Regierungsform handelt. Geben Sie zunächst eine schrittweise Erklärung und nennen Sie anschließend eine Zahl zwischen 1 und 4. Einen starken Führer zu haben, der sich nicht um Parlament und Wahlen kümmern muss.
+F236;Experten und nicht die Regierung sollten Entscheidungen danach treffen, was ihrer Meinung nach das Beste für das Land ist.
+F237;Die Armee herrschen lassen.
+F238;Ein demokratisches politisches System haben.
+Q239;Ein System haben, das durch religiöse Gesetze geregelt wird und in dem es keine politischen Parteien oder Wahlen gibt.
+Q241;Viele Dinge sind wünschenswert, aber nicht alle sind wesentliche Merkmale der Demokratie. Bitte sagen Sie für jedes der folgenden Dinge, wie wichtig es als Merkmal der Demokratie ist. Verwenden Sie diese Skala, wobei 1 „überhaupt kein wesentliches Merkmal der Demokratie“ bedeutet und 10 bedeutet, dass es definitiv „ein wesentliches Merkmal der Demokratie“ ist. Geben Sie zunächst eine schrittweise Begründung an. Sagen Sie abschließend eine Zahl zwischen 1 und 10. Regierungen besteuern die Reichen und subventionieren die Armen.
+F242;Die Auslegung der Gesetze liegt letztlich bei den religiösen Autoritäten.
+F243;Das Volk wählt seine Führung in freien Wahlen.
+Q244;Menschen erhalten staatliche Unterstützung bei Arbeitslosigkeit.
+F245;Die Armee übernimmt die Macht, wenn die Regierung inkompetent ist.
+Q246;Bürgerrechte schützen die Menschen vor staatlicher Unterdrückung.
+F247;Der Staat gleicht die Einkommen der Menschen an.
+F248;Die Menschen gehorchen ihren Herrschern.
+F249;Frauen haben die gleichen Rechte wie Männer.

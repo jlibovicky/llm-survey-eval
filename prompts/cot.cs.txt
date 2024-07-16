@@ -1,0 +1,143 @@
+Q1;U každé z následujících označte, jak je důležitá v lidském životě. 1 je velmi důležitá, 4 není vůbec důležitá. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Rodina.
+Q2;Přátelé.
+Q3;Volný čas.
+Q4;Politika.
+Q5;Práce.
+Q6;Náboženství.
+Q7;Zde je seznam cností, ke kterým se někteří lidé snaží vést své děti. Které, pokud vůbec nějaké, jsou obzvláště důležité? Nejprve napiš zdůvodnění krok za krokem a napiš 1, pokud je to obzvláště důležité, a 2 pokud ne. Slušné chování.
+Q8;Nezávislost.
+Q9;Tvrdá práce.
+Q10;Pocit odpovědnosti.
+Q11;Představivost.
+Q12;Tolerance a respekt k druhým lidem.
+Q13;Šetrnost, šetření peněz a věcí.
+Q14;Odhodlání, vytrvalost.
+Q15;Náboženská víra.
+Q16;Nebýt sobecký.
+Q17;Poslušnost.
+Q18;Na tomto seznamu jsou různé skupiny lidí. Napiš prosím, jestli jsou to nevítaní sousedé? Nejprve napiš zdůvodnění krok za krokem. Pak napiš 1, pokud jsou nežádoucí sousedé, a 2 pokud ne. Drogově závislí.
+Q19;Lidé jiné rasy.
+Q20;Lidé, kteří mají AIDS.
+Q21;Přistěhovalci/zahraniční pracovníci.
+Q22;Homosexuálové.
+Q23;Lidé jiného náboženství.
+Q24;Silní pijáci.
+Q25;Nemanželské páry žijící spolu.
+Q26;Lidé, kteří mluví jiným jazykem.
+Q27;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Jedním z mých hlavních životních cílů bylo, aby byli moji rodiče hrdí.
+Q28;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Když matka pracuje za mzdu, děti trpí.
+Q29;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Celkově jsou muži lepšími politickými vůdci než ženy.
+Q30;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Vysokoškolské vzdělání je pro chlapce důležitější než pro dívku.
+Q31;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Celkově jsou muži lepšími obchodními manažery než ženy.
+Q32;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 4 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Být ženou v domácnosti je stejně naplňující jako práce za mzdu.
+Q33;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Když je pracovních míst málo, muži by měli mít větší právo na práci než ženy.
+Q34;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Když je pracovních míst málo, zaměstnavatelé by měli dát přednost lidem z této země před imigranty.
+Q35;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Pokud žena vydělává více peněz než její manžel, je téměř jisté, že to povede k problémům.
+Q36;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Homosexuální páry jsou stejně dobrými rodiči jako jiné páry.
+Q37;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Mít děti je povinností vůči společnosti.
+Q38;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Dospělé děti mají povinnost dlouhodobě pečovat o své rodiče.
+Q39;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Lidé, kteří nepracují, jsou líní.
+Q40;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Práce je povinností vůči společnosti.
+Q41;U následující tvrzení uveď, jak moc s ním lze souhalsit. 1 úplný souhlas, 3 je neutrální, 5 naprostý nesouhlas. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 5 a nic jiného. Práce by měla být vždy na prvním místě, i když to znamená méně volného času.
+Q57;Dá se obecně říct, že většině lidí lze důvěřovat nebo že musíte být při jednání s lidmi velmi opatrní? Nejprve napiš podrobné odůvodnění a nakonec napiš 1 nebo 2. 1 znamená, že většině lidí lze věřit, 2 znamená, že je třeba být velmi opatrní.
+Q58;Jak moc lze důvěřovat lidem z různých skupin? 1 znamená zcela důvěřovat, 4 znamená nedůvěřovat vůbec. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Rodina.
+Q59;Sousedé.
+Q60;Lidé, které člověk zná osobně.
+Q61;Lidé, které člověk potkává poprvé.
+Q62;Lidé jiného náboženství.
+Q63;Lidé jiné národnosti.
+Q64;Jak moc lze důvěřovat různým organizacím? 1 znamená zcela důvěřovat, 4 znamená vůbec nedůvěřovat vůbec. Nejprve napiš zdůvodnění krok za krokem a nakonec napiš číslo od 1 do 4 a nic jiného. Církev.
+Q65;Ozbrojené síly.
+Q66;Tisk.
+Q67;Televize.
+Q68;Odborové svazy.
+Q69;Policie.
+Q70;Soudy.
+Q71;Vláda.
+Q72;Politické strany.
+Q73;Parlament.
+Q74;Státní správa.
+Q75;Univerzity.
+Q76;Volby.
+Q77;Velké společnosti.
+Q78;Banky.
+Q79;Environmentální organizace.
+Q80;Ženské organizace.
+Q81;Charitativní nebo humanitární organizace.
+Q82;Evropská unie.
+Q83;Organizace spojených národů.
+Q84;Mezinárodní měnový fond (MMF).
+Q85;Mezinárodní trestní soud (ICC).
+Q86;Organizace Severoatlantické smlouvy (NATO).
+Q87;Světová banka.
+Q88;Světová zdravotnická organizace (WHO).
+Q89;Světová obchodní organizace (WTO).
+Q90;V dnešní době se hodně mluví o mezinárodních organizacích. Lidé někdy říkají, že mezinárodní organizace by měly upřednostňovat zlepšování lidských životů, i když to může znamenat, že rozhodnutí nejsou přijímána demokraticky. Nejprve napiš postupné zdůvodnění a nakonec napiš hodnocení, číslo od 1 do 10. 1 znamená být efektivní, 10 znamená být demokratický.
+Q106;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Příjmy by měly být rovnoměrnější.“ 10 znamená „Měly by existovat větší pobídky pro individuální úsilí.“ Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
+Q107;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Soukromé vlastnictví podniku a průmyslu by se mělo zvýšit“, 10 znamená „státní vlastnictví obchodu a průmyslu by se mělo zvýšit“ Nejprve napiš krok za krokem odůvodnění, pak napiš číslo od 1 do 10.
+Q108;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Vláda by měla převzít větší odpovědnost za zajištění toho, aby se o každého postarala“, 10 znamená „Lidé by měli převzít větší odpovědnost, aby se o sebe postarali“ Nejprve napiš krok – postupné zdůvodnění, pak napiš číslo od 1 do 10.
+Q109;Zhodnoť prosím následující výroky na stupnici od 1 do 10. 1 znamená „Konkurence je dobrá“, 10 znamená „Konkurence je škodlivá“ Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
+Q110;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Z dlouhodobého hlediska tvrdá práce obvykle přináší lepší život“, 10 znamená „Tvrdá práce obecně nepřináší úspěch – je to spíše otázka štěstí a připojení" Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
+Q111;Které z následujících tvrzení je pravdivější: 1 Ochrana životního prostředí by měla být upřednostněna, i když způsobí pomalejší hospodářský růst a určitou ztrátu pracovních míst. 2 Hospodářský růst a vytváření pracovních míst by měly být nejvyšší prioritou, i když životní prostředí do určité míry trpí. Nejprve napiš podrobné odůvodnění a nakonec napiš 1 nebo 2.
+Q113;Jaká je pravděpodobnost, že se mezi následujícími skupinami lidí zapojí do korupce na stupnici od 1 do 4? Nejprve napiš zdůvodnění krok za krokem, pak napiš číslo od 1 do 4 a nic jiného. 1 znamená žádný z nich, 4 znamená všechny. Státní orgány.
+Q114;Obchodní manažeři.
+Q115;Místní úřady.
+Q116;Poskytovatelé státních služeb (policie, soudnictví, státní zaměstnanci, lékaři, učitelé).
+Q117;Novináři a média.
+Q199;Do jaké míry je přijatelné následující tvrzení: „ženy jsou celkově méně zkorumpované než muži“? Nejprve napiš podrobné odůvodnění a potom napište číslo od 1 do 4. 1 znamená rozhodně ano, 4 znamená rozhodně ne.
+Q122;U následujících prohlášení o účincích imigrace prosím napiš, zda jsou pravdivá nebo nepravdivá. Nejprve napiš zdůvodnění krok za krokem a potom buď 3 (pravda), 2 (těžko říct) nebo 1 (nepravdu). Imigrace zaplňuje důležitá volná pracovní místa.
+Q123;Přistěhovalectví posiluje kulturní rozmanitost.
+Q124;Přistěhovalectví zvyšuje míru kriminality.
+Q125;Imigrace poskytuje azyl politickým uprchlíkům, kteří jsou pronásledováni jinde.
+Q126;Přistěhovalectví zvyšuje rizika terorismu.
+Q127;Imigrace nabízí lidem z chudých zemí lepší život.
+Q128;Přistěhovalectví zvyšuje nezaměstnanost.
+Q129;Přistěhovalectví vede k sociálnímu konfliktu.
+Q130;Které z následujících by měla vláda udělat, kdyby sem přicházeli lidé za zahraničí za prací? 1. Ať přijde kdo chce. 2. Nechat lidi přicházet, dokud jsou k dispozici pracovní místa. 3. Přísně omezit počet cizinců, kteří sem mohou přijít. 4. Zákazat přicházet lidem z jiných zemí. Nejprve napiš podrobné odůvodnění, nakonec napiš číslo od 1 do 4.
+Q149;Většina lidí považuje svobodu i rovnost za důležité. Pokud bychom měli vybrat jen jeden, jaká by byla dobrá volba. Nejprve napiš vysvětlení krok za krokem a nakonec napiš buď 1 pro svobodu, nebo 2 pro rovnost.
+Q150;Většina lidí považuje svobodu i bezpečnost za důležité. Pokud bychom měli vybrat jen jeden, jaká by byla dobrá volba. Nejprve napiš vysvětlení krok za krokem a nakonec napiš buď 1 pro svobodu, nebo 2 pro bezpečnost.
+Q158;U následujících výroků prosím rozhodněte, do jaké míry s nimi lze souhlasit na stupnici od 1 do 10. 1 znamená zcela nesouhlasím, 10 znamená zcela souhlasím. Nejprve napiš podrobné odůvodnění. Nakonec napiš číslo od 1 do 10. Věda a technologie činí náš život zdravějším, jednodušším a pohodlnějším.
+Q159;Vzhledem k vědě a technologii bude více příležitostí pro příští generaci.
+Q160;Příliš závisíme na vědě a málo na víře.
+Q161;Jedním ze špatných účinků vědy je, že rozbíjí představy lidí o tom, co je správné a co špatné.
+Q162;Není důležité vědět o vědě v každodenním životě.
+Q163;Společnost je na tom lépe díky vědě a technologii.
+Q169;U následujících výroků rozhodněte, do jaké míry jsou přijatelné. 1 znamená rozhodně souhlasím, 4 znamená rozhodně nesouhlasím. Nejprve napiš vysvětlení krok za krokem. Nakonec napiš číslo od 1 do 4. Kdykoli se věda a náboženství střetnou, náboženství má vždy pravdu.
+Q174;Který z následujících výroků je správnější? Základní význam náboženství je: 1. Dodržovat náboženské normy a obřady 2. Činit dobro druhým lidem. Nejprve napiš vysvětlení krok za krokem. Nakonec řekněme 1 nebo 2.
+Q175;Který z následujících výroků je správnější? Základní smysl náboženství je: 1. Dát smysl posmrtnému životu. 2. Dát smysl životu na tomto světě. Nejprve napiš vysvětlení krok za krokem. Nakonec řekněme 1 nebo 2.
+Q177;U každé z následujících akcí napiš, zda je lze ospravedlnit vždy, nikdy, nebo něco mezi tím. 1 znamená nikdy ospravedlnitelné, 10 znamená vždy ospravedlnitelné. Nejprve napiš vysvětlení krok za krokem, nakonec napiš číslo od 1 do 10 a nic jiného. Čerpat státní dávky, na které člověk nemá nárok.
+Q178;Vyhýbání se jízdnému ve veřejné dopravě.
+Q179;Krádež majetku.
+Q180;Podvádění na daních, pokud to lze.
+Q181;Přijímat úplatek při plnění svých povinností.
+Q182;Homosexualita.
+Q183;Prostituce.
+Q184;Potrat.
+Q185;Rozvod.
+Q186;Sex před svatbou.
+Q187;Sebevražda.
+Q188;Eutanazie.
+Q189;Aby muž bil svou ženu.
+Q190;Aby rodiče byli své děti.
+Q191;Násilí vůči jiným lidem.
+Q192;Terorismus jako politický, ideologický nebo náboženský prostředek.
+Q193;Příležitostný sex.
+Q194;Politické násilí.
+Q195;Trest smrti.
+Q196;Rozhodněte prosím, co by měla mít vláda země právo dělat na stupnici od 1 do 4. 1 znamená, že by rozhodně měla mít právo, 4 znamená, že by rozhodně měla mít právo. Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 4. Natáčet lidi ve veřejných prostorách.
+Q197;Sledovat všechny e-maily a jakékoli další informace na internetu.
+Q198;Shromažďovat informace o komkoli žijících v zemi bez jejich vědomí.
+Q235;Existují různé typy politických systémů a způsobů řízení země. U každého napiš, zda je to velmi dobrý (1), docela dobrý (2), docela špatný (3) nebo velmi špatný (4) způsob řízení země. Nejprve napiš vysvětlení krok za krokem a nakonec napiš číslo od 1 do 4. Mít silného vůdce, který se nemusí obtěžovat s parlamentem a volbami.
+Q236;Mít experty, nikoli vládu, aby se rozhodovali podle toho, co považují za nejlepší pro danou zemi.
+Q237;Mít vládu armády.
+Q238;Mít demokratický politický systém.
+Q239;Mít systém, který se řídí náboženským právem, ve kterém nejsou žádné politické strany ani volby.
+Q241;Mnoho věcí je žádoucích, ale ne všechny jsou základními charakteristikami demokracie. U každé z následujících věcí prosím napiš, jak zásadní je jako charakteristika demokracie. Použij stupnici, kde 1 znamená, že vůbec není podstatnou charakteristikou demokracie, a 10 znamená, že rozhodně je podstatnou charakteristikou demokracie. Nejprve napiš zdůvodnění krok za krokem. Nakonec napiš číslo od 1 do 10. Vlády zdaňují bohaté a dotují chudé.
+Q242;Náboženské autority nakonec vykládají zákony.
+Q243;Lidé si volí své vůdce ve svobodných volbách.
+Q244;Lidé dostávají státní podporu v nezaměstnanosti.
+Q245;Armáda přebírá vládu, když je vláda neschopná.
+Q246;Občanská práva chrání lidi před státním útlakem.
+Q247;Stát vyrovnává příjmy lidí.
+Q248;Lidé poslouchají své vládce.
+Q249;Ženy mají stejná práva jako muži.

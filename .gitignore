@@ -1,3 +1,10 @@
+**/*.swp
+**/*.swo
+.snakemake
+
+# This is licenced and cannot be included in the repository
+WVS_Cross-National_Wave_7_csv_v5_0.csv  
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
