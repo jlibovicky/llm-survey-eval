@@ -74,8 +74,8 @@ Q88;Světová zdravotnická organizace (WHO).
 Q89;Světová obchodní organizace (WTO).
 Q90;V dnešní době se hodně mluví o mezinárodních organizacích. Lidé někdy říkají, že mezinárodní organizace by měly upřednostňovat zlepšování lidských životů, i když to může znamenat, že rozhodnutí nejsou přijímána demokraticky. Nejprve napiš postupné zdůvodnění a nakonec napiš hodnocení, číslo od 1 do 10. 1 znamená být efektivní, 10 znamená být demokratický.
 Q106;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Příjmy by měly být rovnoměrnější.“ 10 znamená „Měly by existovat větší pobídky pro individuální úsilí.“ Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
-Q107;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Soukromé vlastnictví podniku a průmyslu by se mělo zvýšit“, 10 znamená „státní vlastnictví obchodu a průmyslu by se mělo zvýšit“ Nejprve napiš krok za krokem odůvodnění, pak napiš číslo od 1 do 10.
-Q108;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Vláda by měla převzít větší odpovědnost za zajištění toho, aby se o každého postarala“, 10 znamená „Lidé by měli převzít větší odpovědnost, aby se o sebe postarali“ Nejprve napiš krok – postupné zdůvodnění, pak napiš číslo od 1 do 10.
+Q107;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Soukromé vlastnictví podniku a průmyslu by se mělo zvýšit“, 10 znamená „státní vlastnictví obchodu a průmyslu by se mělo zvýšit“ Nejprve podrobné odůvodnění, pak napiš číslo od 1 do 10.
+Q108;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Vláda by měla převzít větší odpovědnost za zajištění toho, aby se o každého postarala“, 10 znamená „Lidé by měli převzít větší odpovědnost, aby se o sebe postarali“ Nejprve napiš podrobné zdůvodnění, pak napiš číslo od 1 do 10.
 Q109;Zhodnoť prosím následující výroky na stupnici od 1 do 10. 1 znamená „Konkurence je dobrá“, 10 znamená „Konkurence je škodlivá“ Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
 Q110;Zhodnoť prosím následující výroky na stupnici 1 až 10. 1 znamená „Z dlouhodobého hlediska tvrdá práce obvykle přináší lepší život“, 10 znamená „Tvrdá práce obecně nepřináší úspěch – je to spíše otázka štěstí a připojení" Nejprve napiš podrobné zdůvodnění a potom napiš číslo od 1 do 10.
 Q111;Které z následujících tvrzení je pravdivější: 1 Ochrana životního prostředí by měla být upřednostněna, i když způsobí pomalejší hospodářský růst a určitou ztrátu pracovních míst. 2 Hospodářský růst a vytváření pracovních míst by měly být nejvyšší prioritou, i když životní prostředí do určité míry trpí. Nejprve napiš podrobné odůvodnění a nakonec napiš 1 nebo 2.
@@ -84,7 +84,7 @@ Q114;Obchodní manažeři.
 Q115;Místní úřady.
 Q116;Poskytovatelé státních služeb (policie, soudnictví, státní zaměstnanci, lékaři, učitelé).
 Q117;Novináři a média.
-Q199;Do jaké míry je přijatelné následující tvrzení: „ženy jsou celkově méně zkorumpované než muži“? Nejprve napiš podrobné odůvodnění a potom napište číslo od 1 do 4. 1 znamená rozhodně ano, 4 znamená rozhodně ne.
+Q199;Do jaké míry je přijatelné následující tvrzení: „ženy jsou celkově méně zkorumpované než muži“? Nejprve napiš podrobné odůvodnění a potom napiš číslo od 1 do 4. 1 znamená rozhodně ano, 4 znamená rozhodně ne.
 Q122;U následujících prohlášení o účincích imigrace prosím napiš, zda jsou pravdivá nebo nepravdivá. Nejprve napiš zdůvodnění krok za krokem a potom buď 3 (pravda), 2 (těžko říct) nebo 1 (nepravdu). Imigrace zaplňuje důležitá volná pracovní místa.
 Q123;Přistěhovalectví posiluje kulturní rozmanitost.
 Q124;Přistěhovalectví zvyšuje míru kriminality.
@@ -103,8 +103,8 @@ Q161;Jedním ze špatných účinků vědy je, že rozbíjí představy lidí o 
 Q162;Není důležité vědět o vědě v každodenním životě.
 Q163;Společnost je na tom lépe díky vědě a technologii.
 Q169;U následujících výroků rozhodněte, do jaké míry jsou přijatelné. 1 znamená rozhodně souhlasím, 4 znamená rozhodně nesouhlasím. Nejprve napiš vysvětlení krok za krokem. Nakonec napiš číslo od 1 do 4. Kdykoli se věda a náboženství střetnou, náboženství má vždy pravdu.
-Q174;Který z následujících výroků je správnější? Základní význam náboženství je: 1. Dodržovat náboženské normy a obřady 2. Činit dobro druhým lidem. Nejprve napiš vysvětlení krok za krokem. Nakonec řekněme 1 nebo 2.
-Q175;Který z následujících výroků je správnější? Základní smysl náboženství je: 1. Dát smysl posmrtnému životu. 2. Dát smysl životu na tomto světě. Nejprve napiš vysvětlení krok za krokem. Nakonec řekněme 1 nebo 2.
+Q174;Který z následujících výroků je správnější? Základní význam náboženství je: 1. Dodržovat náboženské normy a obřady 2. Činit dobro druhým lidem. Nejprve napiš vysvětlení krok za krokem. Nakonec napiš 1 nebo 2.
+Q175;Který z následujících výroků je správnější? Základní smysl náboženství je: 1. Dát smysl posmrtnému životu. 2. Dát smysl životu na tomto světě. Nejprve napiš vysvětlení krok za krokem. Nakonec napiš 1 nebo 2.
 Q177;U každé z následujících akcí napiš, zda je lze ospravedlnit vždy, nikdy, nebo něco mezi tím. 1 znamená nikdy ospravedlnitelné, 10 znamená vždy ospravedlnitelné. Nejprve napiš vysvětlení krok za krokem, nakonec napiš číslo od 1 do 10 a nic jiného. Čerpat státní dávky, na které člověk nemá nárok.
 Q178;Vyhýbání se jízdnému ve veřejné dopravě.
 Q179;Krádež majetku.
@@ -117,8 +117,8 @@ Q185;Rozvod.
 Q186;Sex před svatbou.
 Q187;Sebevražda.
 Q188;Eutanazie.
-Q189;Aby muž bil svou ženu.
-Q190;Aby rodiče byli své děti.
+Q189;Když muž bije svojí ženu.
+Q190;Když rodiče bijí své děti.
 Q191;Násilí vůči jiným lidem.
 Q192;Terorismus jako politický, ideologický nebo náboženský prostředek.
 Q193;Příležitostný sex.
