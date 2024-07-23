@@ -53,7 +53,12 @@ def main():
         help="Model ID from the Hugging Face Hub.",
     )
     parser.add_argument(
-        "lng", default="en", help="Questinaire language.")
+        "lng", default="en",
+        help="Questionaire language.")
+    parser.add_argument(
+        "prompt_type",
+        choices=["cot", "score_only"],
+        help="The type of the prompt.")
     parser.add_argument(
         "--max-history", type=int, default=80,
         help="Maximum number of messages to keep in history.")
@@ -64,10 +69,14 @@ def main():
 
     torch.manual_seed(args.seed)
 
+    dtype = torch.bfloat16
+    if args.model.startswith("mistral"):
+        dtype = torch.float16
+
     pipeline = transformers.pipeline(
         "text-generation",
         model=args.model,
-        model_kwargs={"torch_dtype": torch.bfloat16},
+        model_kwargs={"torch_dtype": dtype},
         device_map="auto",
     )
 
@@ -112,7 +121,7 @@ def main():
         generated_text = outputs[0]["generated_text"][len(prompt):] # type: ignore
         return generated_text
 
-    with open(f"questions.{args.lng}.txt") as f, open("validators.txt") as v:
+    with open(f"prompts/{args.prompt_type}.{args.lng}.txt", "r") as f, open("validators.txt", "r") as v:
         questions = f.readlines()
         validators = v.readlines()
 

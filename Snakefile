@@ -17,7 +17,7 @@ rule all:
 
 rule run_survey:
     output:
-        "survey_results/{model}/{lng}.{id}.json"
+        "survey_results/{prompt_type}/{model}/{lng}.{id}.json"
     params:
         model_name=lambda wildcards: MODEL_IDS[wildcards.model],
     resources:
@@ -33,8 +33,13 @@ rule run_survey:
 
         for I in {{1..10}}; do
             SEED=$( echo 1000 \\* $I + {wildcards.id} | bc )
-            if `timeout 1h python3 value_survey.py {params.model_name} {wildcards.lng} --seed $SEED > {output}`; then
+            if `timeout 1h python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED > {output}`; then
                 break
             fi
         done
+
+        # If output is still empty, we failed
+        if [ ! -s {output} ]; then
+            exit 1
+        fi
         """
