@@ -59,3 +59,19 @@ rule run_survey_greedy:
         """
             python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED --greedy > {output}
         """
+
+rule measure_convergence:
+    input:
+        expand("survey_results/{{prompt_type}}/llama3/en.{id}.json", id=range(1, 401))
+    output:
+        "results/llama3_en_USA_{prompt_type}_course.csv"
+    shell:
+        "python3 python3 compare_survey_and_model.py USA {input} > {output}"
+
+rule measure_greedy:
+    input:
+        survey_results="survey_results/{prompt_type}/llama3/en.greedy.json",
+    output:
+        "results/llama3_en_USA_{prompt_type}_greedy.csv"
+    shell:
+        "python3 compare_survey_and_model.py USA {input.survey_results} > {output}"
