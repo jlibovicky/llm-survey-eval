@@ -57,7 +57,7 @@ def main():
         help="Questionnaire language.")
     parser.add_argument(
         "prompt_type",
-        choices=["cot", "score_only"],
+        choices=["cot", "score"],
         help="The type of the prompt.")
     parser.add_argument(
         "--max-history", type=int, default=80,
