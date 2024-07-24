@@ -8,6 +8,10 @@ MODEL_IDS = {
     "gemma": "google/gemma-7b"
 }
 
+LANGUAGES = ["en", "cs", "de"]
+SELECTED_COUNTRIES = ["USA", "GBR", "CZE", "DEU", "IRN", "CHN"]
+PROMPTS = ["cot", "score"]
+
 
 rule all:
     input:
@@ -60,13 +64,16 @@ rule run_survey_greedy:
             python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED --greedy > {output}
         """
 
+
 rule measure_convergence:
     input:
-        expand("survey_results/{{prompt_type}}/llama3/en.{id}.json", id=range(1, 401))
+        expand("survey_results/{{prompt_type}}/llama3/en.{id}.json",
+        id=IDS)
     output:
         "results/llama3_en_USA_{prompt_type}_course.csv"
     shell:
         "python3 python3 compare_survey_and_model.py USA {input} > {output}"
+
 
 rule measure_greedy:
     input:
@@ -75,3 +82,35 @@ rule measure_greedy:
         "results/llama3_en_USA_{prompt_type}_greedy.csv"
     shell:
         "python3 compare_survey_and_model.py USA {input.survey_results} > {output}"
+
+
+rule plot_convergence:
+    input:
+        cot_course="results/llama3_en_USA_course.csv",
+        cot_greedy="results/llama3_en_USA_greedy.csv",
+        score_course="results/llama3_en_USA_score_course.csv",
+        score_greedy="results/llama3_en_USA_score_greedy.csv",
+    output:
+        "results/llama3_en_USA_convergence.png"
+    run:
+        pass
+
+
+rule compare_model_to_survey:
+    input:
+        survey_results=expand(
+            "survey_results/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
+    output:
+        "results/{model}_{lng}_{country}_{prompt_type}_final.csv"
+    shell:
+        "python3 compare_survey_and_model.py {wildcards.country} {input.survey_results} --all-only > {output}"
+
+
+rule survey_model_table:
+    input:
+        expand("results/{{model}}_{lng}_{country}_{prompt_type}_final.csv",
+               lng=LANGUAGES, country=SELECTED_COUNTRIES, prompt_type=PROMPTS),
+    output:
+        "results/{model}_compare_table.csv"
+    shell:
+        "touch {output}"
