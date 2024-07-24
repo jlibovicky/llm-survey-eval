@@ -3,11 +3,13 @@
 .snakemake
 .vscode
 
+
 # This is licenced and cannot be included in the repository
 WVS_Cross-National_Wave_7_csv_v5_0.csv  
 
 # Results of running the models
 survey_results
+results
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
