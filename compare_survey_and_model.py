@@ -151,6 +151,19 @@ def load_questions_ranges_and_survey_results() -> tuple[list[str], list[int], pd
     return included_questions, max_ranges, survey_results
 
 
+def load_model_outputs_to_dataframe(model_output_paths: list[str]) -> pd.DataFrame:
+    llm_results = []
+    for path in model_output_paths:
+        try:
+            with open(path, encoding='utf-8') as f:
+                data = json.load(f)
+                llm_results.append(data["results"])
+        except:
+            logging.error("Failed to read the LLM results from %s.", path)
+    df_llm_results = pd.DataFrame(llm_results)
+    return df_llm_results
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -168,15 +181,7 @@ def main():
     included_questions, max_ranges, survey_results = load_questions_ranges_and_survey_results()
 
     logging.info("Read the LLM from %d JSON files.", len(args.model_outputs))
-    llm_results = []
-    for path in args.model_outputs:
-        try:
-            with open(path, encoding='utf-8') as f:
-                data = json.load(f)
-                llm_results.append(data["results"])
-        except:
-            logging.error("Failed to read the LLM results from %s.", path)
-    df_llm_results = pd.DataFrame(llm_results)
+    df_llm_results = load_model_outputs_to_dataframe(args.model_outputs)
 
     country = survey_results[survey_results["B_COUNTRY_ALPHA"] == args.country]
 
