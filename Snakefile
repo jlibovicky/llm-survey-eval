@@ -15,7 +15,7 @@ rule all:
                model=MODELS, lng=["en"], id=IDS)
 
 
-rule run_survey:
+rule run_survey_sample:
     output:
         "survey_results/{prompt_type}/{model}/{lng}.{id}.json"
     params:
@@ -33,7 +33,7 @@ rule run_survey:
 
         for I in {{1..10}}; do
             SEED=$( echo 1000 \\* $I + {wildcards.id} | bc )
-            if `timeout 1h python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED > {output}`; then
+            if `timeout 2h python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED > {output}`; then
                 break
             fi
         done
@@ -42,4 +42,20 @@ rule run_survey:
         if [ ! -s {output} ]; then
             exit 1
         fi
+        """
+
+rule run_survey_greedy:
+    output:
+        "survey_results/{prompt_type}/{model}/{lng}.greedy.json"
+    params:
+        model_name=lambda wildcards: MODEL_IDS[wildcards.model],
+    resources:
+        mem="20G",
+        cpus_per_task=2,
+        slurm_partition="gpu-troja,gpu-ms",
+        constraint="'gpuram48G'",
+        slurm_extra="'--gres=gpu:1'",
+    shell:
+        """
+            python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED --greedy > {output}
         """

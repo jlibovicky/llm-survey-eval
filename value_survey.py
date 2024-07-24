@@ -54,7 +54,7 @@ def main():
     )
     parser.add_argument(
         "lng", default="en",
-        help="Questionaire language.")
+        help="Questionnaire language.")
     parser.add_argument(
         "prompt_type",
         choices=["cot", "score_only"],
@@ -65,18 +65,18 @@ def main():
     parser.add_argument(
         "--seed", type=int, default=42,
         help="Random seed for reproducibility.")
+    parser.add_argument(
+        "--greedy", action="store_true", default=False,
+        help="Use greedy decoding instead of sampling.")
     args = parser.parse_args()
 
     torch.manual_seed(args.seed)
 
-    dtype = torch.bfloat16
-    if args.model.startswith("mistral"):
-        dtype = torch.float16
-
     pipeline = transformers.pipeline(
         "text-generation",
         model=args.model,
-        model_kwargs={"torch_dtype": dtype},
+        model_kwargs={"torch_dtype": torch.bfloat16,
+                      "attn_implementation": "flash_attention_2"},
         device_map="auto",
     )
 
@@ -103,9 +103,9 @@ def main():
                     max_new_tokens=2000,
                     eos_token_id=terminators,
                     pad_token_id=pipeline.tokenizer.pad_token_id, # type: ignore
-                    do_sample=True,
-                    temperature=0.7,
-                    top_p=0.8,
+                    do_sample=not args.greedy,
+                    temperature=1.0 if args.greedy else 0.7,
+                    top_p=None if args.greedy else 0.9,
                 )
             except RuntimeError as e:
                 # If e is OOM, remove a message from the beginning of the conversation
@@ -137,7 +137,9 @@ def main():
             attempts += 1
             answer = send_message(question)
             results[q_id] = VALIDATORS[validator](answer) # type: ignore
-            if attempts > 50:
+            # If the answer is not valid, try again, but with greedy decoding,
+            # it is always the same answer
+            if attempts > 2 if args.greedy else 20:
                 logging.warning("Too many attempts, skipping to the next question.")
                 answer = ""
                 break
