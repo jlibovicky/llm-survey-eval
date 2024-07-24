@@ -1,4 +1,27 @@
 Q1;Geben Sie für jeden der folgenden Punkte an, wie wichtig er im menschlichen Leben ist. 1 ist sehr wichtig, 4 ist überhaupt nicht wichtig. Nennen Sie die Zahl von 1 bis 4 und sonst nichts. Familie.  F2;Freunde.  F3;Freizeit.  F4;Politik.  F5;Arbeit.  F6;Religion.  F7;Hier ist eine Liste von Eigenschaften, die Kinder zu Hause lernen können. Welche, wenn überhaupt, sind besonders wichtig? Sagen Sie "1", wenn es besonders wichtig ist, und "2", wenn nicht. Gute Manieren.  F8;Unabhängigkeit.  F9;Harte Arbeit.  F10;Verantwortungsgefühl.  F11;Vorstellungskraft.  F12;Toleranz und Respekt gegenüber anderen Menschen.  F13;Sparsamkeit, Geld und Dinge sparen.  F14;Entschlossenheit, Ausdauer.  F15;Religiöser Glaube.  F16:Nicht egoistisch sein.  F17;Gehorsamkeit.  F18;Auf dieser Liste sind verschiedene Personengruppen aufgeführt. Können Sie bitte angeben, ob es sich um unerwünschte Nachbarn handelt? Geben Sie 1 an, wenn es sich um unerwünschte Nachbarn handelt, und 2, wenn dies nicht der Fall ist. Drogenabhängige.  F19;Menschen einer anderen Rasse.  F20;Menschen, die AIDS haben.  F21;Einwanderer/ausländische Arbeitnehmer.  F22;Homosexuelle.  F23;Menschen einer anderen Religion.  F24;Starke Trinker.
+Q2;Freunde.
+Q3;Freizeit.
+Q4;Politik.
+Q5;Arbeit.
+Q6;Religion.
+Q7;Hier ist eine Liste von Eigenschaften, die Kinder zu Hause lernen können. Welche, wenn überhaupt, sind besonders wichtig? Sagen Sie "1", wenn es besonders wichtig ist, und "2", wenn nicht. Gute Manieren.
+Q8;Unabhängigkeit.
+Q9;Harte Arbeit.
+Q10;Verantwortungsgefühl.
+Q11;Vorstellungskraft.
+Q12;Toleranz und Respekt gegenüber anderen Menschen.
+Q13;Sparsamkeit, Geld und Dinge sparen.
+Q14;Entschlossenheit, Ausdauer.
+Q15;Religiöser Glaube.
+Q16;Nicht egoistisch sein.
+Q17;Gehorsamkeit.
+Q18;Auf dieser Liste sind verschiedene Personengruppen aufgeführt. Können Sie bitte angeben, ob es sich um unerwünschte Nachbarn handelt? Geben Sie 1 an, wenn es sich um unerwünschte Nachbarn handelt, und 2, wenn dies nicht der Fall ist und sonst nichts. Drogenabhängige.
+Q19;Menschen einer anderen Rasse.
+Q20;Menschen, die AIDS haben.
+Q21;Einwanderer/ausländische Arbeitnehmer.
+Q22;Homosexuelle.
+Q23;Menschen einer anderen Religion.
+Q24;Starke Trinker.
 Q25;Zusammenlebende unverheiratete Paare.
 Q26;Menschen, die eine andere Sprache sprechen.
 Q27;Sagen Sie mir, wie sehr kann man der folgenden Aussage zustimmen. 1 bedeutet völlige Zustimmung, 4 bedeutet überhaupt überhaupt keine Zustimmung. Nennen Sie eine Zahl zwischen 1 und 4 und sonst nichts. Eines meiner wichtigsten Lebensziele war es, meine Eltern stolz zu machen.
