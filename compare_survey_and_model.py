@@ -69,7 +69,7 @@ def compare_survey_and_model(
 
         survey_answer_counts = survey_answers.value_counts(normalize=False).to_dict()
         survey_answer_distribution = get_smoothed_distribution(
-            survey_answer_counts, max_range, smoothing=0.01)
+            survey_answer_counts, max_range, smoothing=1)
 
         compare_answers = compare_data[question_id]
         compare_answers = compare_answers.dropna()
@@ -99,8 +99,8 @@ def compare_survey_and_model(
                 continue
             kl_divergence += (
                 survey_answer_distribution[key] *
-                np.log(survey_answer_distribution[key] /
-                    compare_answer_distribution[key]))
+                (np.log(survey_answer_distribution[key]) -
+                 np.log(compare_answer_distribution[key])))
         all_kl_divergences.append(kl_divergence)
 
         # Compute the p-value of the Chi-squared test
