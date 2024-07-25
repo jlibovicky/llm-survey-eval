@@ -93,9 +93,9 @@ rule plot_convergence:
         score_course="results/llama3_en_USA_score_course.csv",
         score_greedy="results/llama3_en_USA_score_greedy.csv",
     output:
-        "results/llama3_en_USA_convergence.png"
-    run:
-        pass
+        "results/llama3_en_USA_convergence.pdf"
+    shell:
+        "python3 convergence_plot.py {input.cot_course} {input.cot_greedy} {input.score_course} {input.score_greedy} {output}"
 
 
 rule compare_model_to_survey:
