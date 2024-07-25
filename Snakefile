@@ -155,3 +155,12 @@ rule survey_model_table:
                           ",".join([str(x) for x in stdiffs]) + "," +
                           ",".join([str(x) for x in kl_divs]), file=output)
         output.close()
+
+
+rule self_correlation_plot:
+    input:
+        model_outputs=expand("model_outputs/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
+    output:
+        "results/{model}_{lng}_{COUNTRY}_{prompt_type}_self_correlation.pdf"
+    shell:
+        "python3 plot_self_correlation.py {wildcards.COUNTRY} {output} {input.model_outputs}"
