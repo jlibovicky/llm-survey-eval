@@ -139,7 +139,7 @@ def main():
             results[q_id] = VALIDATORS[validator](answer) # type: ignore
             # If the answer is not valid, try again, but with greedy decoding,
             # it is always the same answer
-            if attempts > 2 if args.greedy else 20:
+            if attempts > (2 if args.greedy else 20):
                 logging.warning("Too many attempts, skipping to the next question.")
                 answer = ""
                 break

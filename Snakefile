@@ -1,4 +1,4 @@
-IDS = [f"{i:03d}" for i in range(1, 401)]
+IDS = [f"{i:03d}" for i in range(1, 301)]
 
 MODELS = ["llama3"] #, "mistral"]#, "gemma"]
 
@@ -72,7 +72,7 @@ rule measure_convergence:
     output:
         "results/llama3_en_USA_{prompt_type}_course.csv"
     shell:
-        "python3 python3 compare_survey_and_model.py USA {input} > {output}"
+        "python3 compare_survey_and_model.py USA {input} > {output}"
 
 
 rule measure_greedy:
