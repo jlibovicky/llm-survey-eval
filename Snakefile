@@ -15,13 +15,13 @@ PROMPTS = ["cot", "score"]
 
 rule all:
     input:
-        expand("survey_results/{model}/{lng}.{id}.json",
+        expand("model_outputs/{model}/{lng}.{id}.json",
                model=MODELS, lng=["en"], id=IDS)
 
 
 rule run_survey_sample:
     output:
-        "survey_results/{prompt_type}/{model}/{lng}.{id}.json"
+        "model_outputs/{prompt_type}/{model}/{lng}.{id}.json"
     params:
         model_name=lambda wildcards: MODEL_IDS[wildcards.model],
     wildcard_constraints:
@@ -52,7 +52,7 @@ rule run_survey_sample:
 
 rule run_survey_greedy:
     output:
-        "survey_results/{prompt_type}/{model}/{lng}.greedy.json"
+        "model_outputs/{prompt_type}/{model}/{lng}.greedy.json"
     params:
         model_name=lambda wildcards: MODEL_IDS[wildcards.model],
     resources:
@@ -69,7 +69,7 @@ rule run_survey_greedy:
 
 rule measure_convergence:
     input:
-        expand("survey_results/{{prompt_type}}/llama3/en.{id}.json",
+        expand("model_outputs/{{prompt_type}}/llama3/en.{id}.json",
         id=IDS)
     output:
         "results/llama3_en_USA_{prompt_type}_course.csv"
@@ -79,11 +79,11 @@ rule measure_convergence:
 
 rule measure_greedy:
     input:
-        survey_results="survey_results/{prompt_type}/llama3/en.greedy.json",
+        model_outputs="survey_results/{prompt_type}/llama3/en.greedy.json",
     output:
         "results/llama3_en_USA_{prompt_type}_greedy.csv"
     shell:
-        "python3 compare_survey_and_model.py USA {input.survey_results} > {output}"
+        "python3 compare_survey_and_model.py USA {input.model_outputs} > {output}"
 
 
 rule plot_convergence:
@@ -100,12 +100,12 @@ rule plot_convergence:
 
 rule compare_model_to_survey:
     input:
-        survey_results=expand(
-            "survey_results/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
+        model_outputs=expand(
+            "model_outputs/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
     output:
         "results/{model}_{lng}_{country}_{prompt_type}_final.csv"
     shell:
-        "python3 compare_survey_and_model.py {wildcards.country} {input.survey_results} --all-only > {output}"
+        "python3 compare_survey_and_model.py {wildcards.country} {input.model_outputs} --all-only > {output}"
 
 
 rule survey_model_table:

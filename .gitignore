@@ -8,7 +8,7 @@
 WVS_Cross-National_Wave_7_csv_v5_0.csv  
 
 # Results of running the models
-survey_results
+model_outputs
 results
 
 # Byte-compiled / optimized / DLL files
