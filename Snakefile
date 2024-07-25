@@ -1,4 +1,4 @@
-IDS = [f"{i:03d}" for i in range(1, 301)]
+IDS = [f"{i:03d}" for i in range(1, 401)]
 
 MODELS = ["llama3"] #, "mistral"]#, "gemma"]
 
@@ -24,6 +24,8 @@ rule run_survey_sample:
         "survey_results/{prompt_type}/{model}/{lng}.{id}.json"
     params:
         model_name=lambda wildcards: MODEL_IDS[wildcards.model],
+    wildcard_constraints:
+        id="|".join(IDS),
     resources:
         mem="20G",
         cpus_per_task=2,
@@ -86,8 +88,8 @@ rule measure_greedy:
 
 rule plot_convergence:
     input:
-        cot_course="results/llama3_en_USA_course.csv",
-        cot_greedy="results/llama3_en_USA_greedy.csv",
+        cot_course="results/llama3_en_USA_cot_course.csv",
+        cot_greedy="results/llama3_en_USA_cot_greedy.csv",
         score_course="results/llama3_en_USA_score_course.csv",
         score_greedy="results/llama3_en_USA_score_greedy.csv",
     output:
