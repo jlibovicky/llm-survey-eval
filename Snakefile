@@ -10,7 +10,7 @@ MODEL_IDS = {
 
 LANGUAGES = ["en", "cs", "de"]
 SELECTED_COUNTRIES = ["USA", "GBR", "CZE", "DEU", "IRN", "CHN"]
-PROMPTS = ["cot", "score"]
+PROMPTS = ["score", "cot"]
 
 
 rule all:
@@ -19,13 +19,18 @@ rule all:
                model=MODELS, lng=["en"], id=IDS)
 
 
+wildcard_constraints:
+    id="|".join(IDS),
+    model="|".join(MODEL_IDS),
+    prompt_type="|".join(PROMPTS),
+    lng="|".join(LANGUAGES),
+
+
 rule run_survey_sample:
     output:
         "model_outputs/{prompt_type}/{model}/{lng}.{id}.json"
     params:
         model_name=lambda wildcards: MODEL_IDS[wildcards.model],
-    wildcard_constraints:
-        id="|".join(IDS),
     resources:
         mem="20G",
         cpus_per_task=2,
@@ -63,7 +68,7 @@ rule run_survey_greedy:
         slurm_extra="'--gres=gpu:1'",
     shell:
         """
-            python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED --greedy > {output}
+            python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --greedy > {output}
         """
 
 
@@ -98,21 +103,55 @@ rule plot_convergence:
         "python3 convergence_plot.py {input.cot_course} {input.cot_greedy} {input.score_course} {input.score_greedy} {output}"
 
 
-rule compare_model_to_survey:
+rule compare_model_to_survey_sample:
     input:
         model_outputs=expand(
             "model_outputs/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
     output:
-        "results/{model}_{lng}_{country}_{prompt_type}_final.csv"
+        "results/{model}_{lng}_{country}_{prompt_type}_sample_final.csv"
     shell:
         "python3 compare_survey_and_model.py {wildcards.country} {input.model_outputs} --all-only > {output}"
 
 
+rule compare_model_to_survey_greedy:
+    input:
+        model_output="model_outputs/{prompt_type}/{model}/{lng}.greedy.json",
+    output:
+        "results/{model}_{lng}_{country}_{prompt_type}_greedy_final.csv"
+    shell:
+        "python3 compare_survey_and_model.py {wildcards.country} {input.model_output} --all-only > {output}"
+
+
 rule survey_model_table:
     input:
-        expand("results/{{model}}_{lng}_{country}_{prompt_type}_final.csv",
-               lng=LANGUAGES, country=SELECTED_COUNTRIES, prompt_type=PROMPTS),
+        expand("results/{{model}}_{lng}_{country}_{prompt_type}_{decoding}_final.csv",
+               lng=LANGUAGES, country=SELECTED_COUNTRIES, prompt_type=PROMPTS,
+               decoding=["greedy", "sample"]),
     output:
         "results/{model}_compare_table.csv"
-    shell:
-        "touch {output}"
+    run:
+        import numpy as np
+
+        output = open(f"{output}", "w")
+        print("Language,Prompt,Decoding," +
+              ",".join([f"{c}_mse" for c in SELECTED_COUNTRIES]) + "," + 
+              ",".join([f"{c}_stddiff" for c in SELECTED_COUNTRIES]) + "," +
+              ",".join([f"{c}_kldiv" for c in SELECTED_COUNTRIES]), file=output)
+
+        for prompt_type in PROMPTS:
+            for lang in LANGUAGES:
+                for decoding in ["greedy", "sample"]:
+                    mses = []
+                    stdiffs = []
+                    kl_divs = []
+                    for country in SELECTED_COUNTRIES:
+                        with open(f"results/{wildcards.model}_{lang}_{country}_{prompt_type}_{decoding}_final.csv") as f:
+                            scores = np.genfromtxt(f, delimiter=",", skip_header=0)
+                            mses.append(scores[0])
+                            stdiffs.append(scores[2])
+                            kl_divs.append(scores[3])
+                    print(f"{lang},{prompt_type},{decoding}," +
+                          ",".join([str(x) for x in mses]) + "," +
+                          ",".join([str(x) for x in stdiffs]) + "," +
+                          ",".join([str(x) for x in kl_divs]), file=output)
+        output.close()
