@@ -175,6 +175,45 @@ rule survey_model_table:
                           ",".join([str(x) for x in kl_divs]), file=output)
         output.close()
 
+rule compare_countries:
+    output:
+        "results/country_comparison.csv"
+    run:
+        import numpy as np
+        import pandas as pd
+        from compare_survey_and_model import compute_statistics, load_questions_ranges_and_survey_results
+
+        mses = np.zeros((len(SELECTED_COUNTRIES), len(SELECTED_COUNTRIES)))
+        kl_divergences = np.zeros((len(SELECTED_COUNTRIES), len(SELECTED_COUNTRIES)))
+
+        included_questions, max_ranges, survey_results = load_questions_ranges_and_survey_results()
+
+        for i, country_1 in enumerate(SELECTED_COUNTRIES):
+            for j, country_2 in enumerate(SELECTED_COUNTRIES):
+                if i == j:
+                    continue
+
+                country_1_results = survey_results[survey_results["B_COUNTRY_ALPHA"] == country_1]
+                country_2_results = survey_results[survey_results["B_COUNTRY_ALPHA"] == country_2]
+
+                mse, _, _, kl_divergence, _ = compute_statistics(
+                    included_questions, max_ranges,
+                    country_1_results, country_2_results, compare_is_country=True,
+                    skip_questions=PROBLEMATIC_QUESTIONS)
+
+                mses[i, j] = mse
+                kl_divergences[i, j] = kl_divergence
+
+
+        mses_df = pd.DataFrame(mses, index=SELECTED_COUNTRIES, columns=SELECTED_COUNTRIES)
+        kl_divergences_df = pd.DataFrame(kl_divergences, index=SELECTED_COUNTRIES, columns=SELECTED_COUNTRIES)
+
+        with open(f"{output}", "w") as f_out:
+            print("MSEs:", file=f_out)
+            print(mses_df.to_csv(), file=f_out)
+            print("KL divergences:", file=f_out)
+            print(kl_divergences_df.to_csv(), file=f_out)
+
 
 rule self_correlation_plot:
     input:
