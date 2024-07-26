@@ -13,6 +13,11 @@ SELECTED_COUNTRIES = ["USA", "GBR", "CZE", "DEU", "IRN", "CHN"]
 PROMPTS = ["score", "cot"]
 
 
+PROBLEMATIC_QUESTIONS = [
+    "Q125", "Q130", "Q174", "Q175", "Q183", "Q189", "Q193", "Q22", "Q36", "Q82",
+    "Q83", "Q84", "Q85", "Q86", "Q87", "Q88", "Q89", "Q90", ]
+
+
 rule all:
     input:
         expand("model_outputs/{model}/{lng}.{id}.json",
@@ -109,8 +114,15 @@ rule compare_model_to_survey_sample:
             "model_outputs/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
     output:
         "results/{model}_{lng}_{country}_{prompt_type}_sample_final.csv"
-    shell:
-        "python3 compare_survey_and_model.py {wildcards.country} {input.model_outputs} --all-only > {output}"
+    run:
+        from compare_survey_and_model import compare_survey_and_model
+        with open(f"{output}", "w") as f_out:
+            compare_survey_and_model(
+                wildcards.country,
+                input.model_outputs,
+                all_only=True,
+                skip_questions=PROBLEMATIC_QUESTIONS,
+                output_file=f_out)
 
 
 rule compare_model_to_survey_greedy:
@@ -118,8 +130,15 @@ rule compare_model_to_survey_greedy:
         model_output="model_outputs/{prompt_type}/{model}/{lng}.greedy.json",
     output:
         "results/{model}_{lng}_{country}_{prompt_type}_greedy_final.csv"
-    shell:
-        "python3 compare_survey_and_model.py {wildcards.country} {input.model_output} --all-only > {output}"
+    run:
+        from compare_survey_and_model import compare_survey_and_model
+        with open(f"{output}", "w") as f_out:
+            compare_survey_and_model(
+                wildcards.country,
+                [input.model_output],
+                all_only=True,
+                skip_questions=PROBLEMATIC_QUESTIONS,
+                output_file=f_out)
 
 
 rule survey_model_table:
@@ -139,8 +158,8 @@ rule survey_model_table:
               ",".join([f"{c}_kldiv" for c in SELECTED_COUNTRIES]), file=output)
 
         for prompt_type in PROMPTS:
+            for decoding in ["greedy", "sample"]:
             for lang in LANGUAGES:
-                for decoding in ["greedy", "sample"]:
                     mses = []
                     stdiffs = []
                     kl_divs = []

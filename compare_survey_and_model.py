@@ -3,6 +3,8 @@
 import argparse
 import json
 import logging
+import sys
+from typing import TextIO
 
 import numpy as np
 import pandas as pd
@@ -47,11 +49,12 @@ def standardize_survey_answers(question_id: str, answers: pd.Series) -> pd.Serie
     return survey_answers
 
 
-def compare_survey_and_model(
+def compute_statistics(
         included_questions: list[str], max_ranges: list[int],
         country_data: pd.DataFrame,
         compare_data: pd.DataFrame,
-        compare_is_country: bool = False) -> tuple[float, float, float, float, float]:
+        compare_is_country: bool = False,
+        skip_questions: set[str] = set()) -> tuple[float, float, float, float, float]:
     all_mses = []
     all_kl_divergences = []
     stds = []
@@ -60,6 +63,8 @@ def compare_survey_and_model(
 
     # Compare frames
     for question_id, max_range in zip(included_questions, max_ranges):
+        if question_id in skip_questions:
+            continue
         survey_answers = country_data[question_id]
         survey_answers = standardize_survey_answers(question_id, survey_answers)
 
@@ -164,6 +169,33 @@ def load_model_outputs_to_dataframe(model_output_paths: list[str]) -> pd.DataFra
     return df_llm_results
 
 
+def compare_survey_and_model(
+    country_code: str,
+    model_output_paths: list[str],
+    skip_questions: list[str] = [],
+    all_only: bool = False,  # If True, use all the LLM outputs.
+    output_file: TextIO = sys.stdout
+) -> None:
+    assert country_code in COUNTRIES, f"Invalid country code: {country_code}"
+
+    included_questions, max_ranges, survey_results = load_questions_ranges_and_survey_results()
+
+    logging.info("Read the LLM from %d JSON files.", len(model_output_paths))
+    df_llm_results = load_model_outputs_to_dataframe(model_output_paths)
+
+    country = survey_results[survey_results["B_COUNTRY_ALPHA"] == country_code]
+
+    logging.info("Compare the survey and the LLM for different result counts.")
+    start_index = len(df_llm_results) if all_only else 1
+    for i in range(start_index, len(df_llm_results) + 1):
+        mse, std, std_diff, kl_divergence, p_val = compute_statistics(
+            included_questions, max_ranges, country, df_llm_results.head(i),
+            compare_is_country=False, skip_questions=set(skip_questions))
+        print(f"{mse:.4f},{std:.4f},{std_diff:.4f},{kl_divergence:.4f},{p_val:.4f}", file=output_file)
+
+    logging.info("Done.")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -178,21 +210,7 @@ def main():
         help="Use all the LLM outputs.")
     args = parser.parse_args()
 
-    included_questions, max_ranges, survey_results = load_questions_ranges_and_survey_results()
-
-    logging.info("Read the LLM from %d JSON files.", len(args.model_outputs))
-    df_llm_results = load_model_outputs_to_dataframe(args.model_outputs)
-
-    country = survey_results[survey_results["B_COUNTRY_ALPHA"] == args.country]
-
-    logging.info("Compare the survey and the LLM for different result counts.")
-    start_index = len(df_llm_results) if args.all_only else 1
-    for i in range(start_index, len(df_llm_results) + 1):
-        mse, std, std_diff, kl_divergence, p_val = compare_survey_and_model(
-            included_questions, max_ranges, country, df_llm_results.head(i))
-        print(f"{mse:.4f},{std:.4f},{std_diff:.4f},{kl_divergence:.4f},{p_val:.4f}")
-
-    logging.info("Done.")
+    compare_survey_and_model(args.country, args.model_outputs, all_only=args.all_only)
 
 
 if __name__ == "__main__":
