@@ -1,11 +1,11 @@
 IDS = [f"{i:03d}" for i in range(1, 401)]
 
-MODELS = ["llama3"] #, "mistral"]#, "gemma"]
+MODELS = ["llama3", "mistral"]
 
 MODEL_IDS = {
     "llama3": "meta-llama/Meta-Llama-3-8B-Instruct",
     "mistral": "mistralai/Mistral-7B-Instruct-v0.1",
-    "gemma": "google/gemma-7b"
+    "gemma": "google/gemma-2b"
 }
 
 LANGUAGES = ["en", "cs", "de"]
@@ -20,8 +20,10 @@ PROBLEMATIC_QUESTIONS = [
 
 rule all:
     input:
-        expand("model_outputs/{model}/{lng}.{id}.json",
-               model=MODELS, lng=["en"], id=IDS)
+        "results/country_comparison.csv",
+        "results/countries_self_correlation.csv",
+        "results/llama3_compare_table.csv",
+        "results/llama3_correlation_table.csv",
 
 
 wildcard_constraints:
@@ -159,7 +161,7 @@ rule survey_model_table:
 
         for prompt_type in PROMPTS:
             for decoding in ["greedy", "sample"]:
-            for lang in LANGUAGES:
+                for lang in LANGUAGES:
                     mses = []
                     stdiffs = []
                     kl_divs = []
@@ -204,7 +206,6 @@ rule compare_countries:
                 mses[i, j] = mse
                 kl_divergences[i, j] = kl_divergence
 
-
         mses_df = pd.DataFrame(mses, index=SELECTED_COUNTRIES, columns=SELECTED_COUNTRIES)
         kl_divergences_df = pd.DataFrame(kl_divergences, index=SELECTED_COUNTRIES, columns=SELECTED_COUNTRIES)
 
@@ -222,3 +223,99 @@ rule self_correlation_plot:
         "results/{model}_{lng}_{COUNTRY}_{prompt_type}_self_correlation.pdf"
     shell:
         "python3 plot_self_correlation.py {wildcards.COUNTRY} {output} {input.model_outputs}"
+
+
+def compute_countries_self_correlation():
+        from compare_survey_and_model import load_questions_ranges_and_survey_results
+
+        questions, _, survey_results = load_questions_ranges_and_survey_results()
+        questions = [q for q in questions if q not in PROBLEMATIC_QUESTIONS]
+
+        correlation_matrices = []
+        for country in SELECTED_COUNTRIES:
+            country_results = survey_results[survey_results["B_COUNTRY_ALPHA"] == country]
+            correlation_matrix = country_results[questions].corr().fillna(0)
+            correlation_matrices.append(correlation_matrix)
+
+        return correlation_matrices
+
+
+rule countries_self_correlation:
+    output:
+        "results/countries_self_correlation.csv"
+    run:
+        import numpy as np
+        import pandas as pd
+
+        correlation_matrices = compute_countries_self_correlation()
+
+        # Now get normalized Frobenius of each matrix
+        normalizer = len(questions) * (len(questions) - 1) / 2
+        frobenius_norms = [
+            np.linalg.norm(np.tril(matrix, -1), ord="fro") / normalizer
+            for matrix in correlation_matrices]
+
+        # Distances between matrices
+        distances = np.zeros((len(SELECTED_COUNTRIES), len(SELECTED_COUNTRIES)))
+        for i, country_1 in enumerate(SELECTED_COUNTRIES):
+            for j, country_2 in enumerate(SELECTED_COUNTRIES):
+                if i == j:
+                    continue
+                distances[i, j] = np.linalg.norm(
+                    correlation_matrices[i] - correlation_matrices[j], ord="fro") / 2 / normalizer
+
+        with open(output[0], "w") as f_out:
+            print("Distances:", file=f_out)
+            print(pd.DataFrame(distances, index=SELECTED_COUNTRIES, columns=SELECTED_COUNTRIES).to_csv(), file=f_out)
+            print("Frobenius norms:", file=f_out)
+            print("," + ",".join([str(x) for x in frobenius_norms]), file=f_out)
+
+
+rule compare_self_correlation_with_model:
+    input:
+        model_outputs=expand("model_outputs/{{prompt_type}}/{{model}}/{{lng}}.{id}.json", id=IDS[:200]),
+    output:
+        "results/{model}_{lng}_{prompt_type}_correlation_compare.csv"
+    run:
+        import numpy as np
+        import pandas as pd
+        from compare_survey_and_model import load_model_outputs_to_dataframe
+
+        country_correlation_matrices = compute_countries_self_correlation()
+
+        model_answers = load_model_outputs_to_dataframe(
+            input.model_outputs)[country_correlation_matrices[0].columns]
+        model_corr = model_answers.corr(numeric_only=True).fillna(0)
+
+        # Frobenius norm of model_corr
+        normalizer = len(model_corr) * (len(model_corr) - 1) / 2
+        norm = np.linalg.norm(np.tril(model_corr, -1), ord="fro") / normalizer
+        results = [norm]
+
+        for i, country in enumerate(SELECTED_COUNTRIES):
+            country_corr = country_correlation_matrices[i]
+            model_country_corr = model_corr[country_corr.columns]
+            results.append(np.linalg.norm(
+                country_corr - model_country_corr, ord="fro") / 2 / normalizer)
+
+        with open(output[0], "w") as f_out:
+            print(",".join([str(x) for x in results]), file=f_out)
+
+
+rule self_correlation_table:
+    input:
+        expand("results/{{model}}_{lng}_{prompt_type}_correlation_compare.csv",
+               lng=LANGUAGES, prompt_type=PROMPTS)
+    output:
+        "results/{model}_correlation_table.csv"
+    run:
+        import numpy as np
+
+        with open(output[0], "w") as f_out:
+            print("Language,Prompt,Norm," + ",".join(SELECTED_COUNTRIES), file=f_out)
+            for prompt_type in PROMPTS:
+                for lang in LANGUAGES:
+                    with open(f"results/{wildcards.model}_{lang}_{prompt_type}_correlation_compare.csv") as f:
+                        scores = np.genfromtxt(f, delimiter=",", skip_header=0)
+                        assert scores.shape == (len(SELECTED_COUNTRIES) + 1,)
+                        print(f"{lang},{prompt_type},{','.join(map(str, scores))}", file=f_out)
