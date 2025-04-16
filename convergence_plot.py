@@ -40,7 +40,7 @@ def main():
 
     ax2 = ax1.twinx()
 
-    color2 = "tab:green"
+    color2 = "tab:red"
     ax2.plot(data_cot[:,3], color=color2)
     ax2.plot(data_score_only[:,3], color=color2, linestyle="--")
     ax2.scatter([380], [greedy_cot[3]], color=color2, marker="$-$", s=500)
