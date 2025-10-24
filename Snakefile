@@ -5,7 +5,8 @@ MODELS = ["llama3", "mistral"]
 MODEL_IDS = {
     "llama3": "meta-llama/Meta-Llama-3-8B-Instruct",
     "mistral": "mistralai/Mistral-7B-Instruct-v0.1",
-    "gemma": "google/gemma-2b"
+    "qwen": "Qwen/Qwen2.5-7B-Instruct",
+    "eurollm": "utter-project/EuroLLM-9B-Instruct"
 }
 
 LANGUAGES = ["en", "cs", "de"]
@@ -22,8 +23,12 @@ rule all:
     input:
         "results/country_comparison.csv",
         "results/countries_self_correlation.csv",
-        "results/llama3_compare_table.csv",
-        "results/llama3_correlation_table.csv",
+        "results/qwen_compare_table.csv",
+        "results/qwen_correlation_table.csv",
+        "results/eurollm_compare_table.csv",
+        "results/eurollm_correlation_table.csv",
+        "results/qwen_en_USA_cot_self_correlation.pdf",
+        "results/eurollm_en_USA_cot_self_correlation.pdf",
 
 
 wildcard_constraints:
@@ -42,16 +47,16 @@ rule run_survey_sample:
         mem="20G",
         cpus_per_task=2,
         slurm_partition="gpu-troja,gpu-ms",
-        constraint="'gpuram48G'",
+        constraint="'gpuram40G|gpuram48G'",
         slurm_extra="'--gres=gpu:1'",
     shell:
         """
         # Some seeds are unlucky and the models does not generate results in the
         # correct format, so we try multiple seeds.
 
-        for I in {{1..10}}; do
-            SEED=$( echo 1000 \\* $I + {wildcards.id} | bc )
-            if `timeout 2h python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED > {output}`; then
+        for I in {{1..2}}; do
+            SEED=$( echo 2000 \\* $I + {wildcards.id} | bc )
+            if `timeout 4h python3 value_survey.py {params.model_name} {wildcards.lng} {wildcards.prompt_type} --seed $SEED > {output}`; then
                 break
             fi
         done
@@ -71,7 +76,7 @@ rule run_survey_greedy:
         mem="20G",
         cpus_per_task=2,
         slurm_partition="gpu-troja,gpu-ms",
-        constraint="'gpuram48G'",
+        constraint="'gpuram40G|gpuram48G'",
         slurm_extra="'--gres=gpu:1'",
     shell:
         """
