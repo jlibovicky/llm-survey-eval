@@ -1,31 +1,29 @@
 #!/usr/bin/env python3
-
 """Do the World Value Survey with a model from the Hugging Face Hub."""
-
 import argparse
 from datetime import datetime
 import gc
 import json
 import logging
-from typing import Callable, Optional
+from typing import Callable, Dict, List, Optional, Tuple, Any
+import torch
+import transformers
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-import transformers
-import torch
-
 
 def get_results_int(answer: str) -> Optional[int]:
     last_line = answer.strip().split("\n")[-1]
     result = None
     for token in reversed(last_line.split()):
+        # Strip punctuation
+        token = token.strip(".,;:!?()[]{}<>\"'`")
         try:
-            result = int(token)
+            result = int(round(float(token)))
             break
         except ValueError:
             pass
     return result
-
 
 def valid_results_1_to_n(n: int) -> Callable[[str], Optional[int]]:
     def validator(answer: str) -> Optional[int]:
@@ -34,7 +32,6 @@ def valid_results_1_to_n(n: int) -> Callable[[str], Optional[int]]:
             return result
         return None
     return validator
-
 
 VALIDATORS = {
     "1or2": valid_results_1_to_n(2),
@@ -45,6 +42,7 @@ VALIDATORS = {
 }
 
 
+@torch.no_grad()
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -60,9 +58,6 @@ def main():
         choices=["cot", "score"],
         help="The type of the prompt.")
     parser.add_argument(
-        "--max-history", type=int, default=80,
-        help="Maximum number of messages to keep in history.")
-    parser.add_argument(
         "--seed", type=int, default=42,
         help="Random seed for reproducibility.")
     parser.add_argument(
@@ -72,93 +67,140 @@ def main():
 
     torch.manual_seed(args.seed)
 
-    pipeline = transformers.pipeline(
-        "text-generation",
-        model=args.model,
-        model_kwargs={"torch_dtype": torch.bfloat16,
-                      "attn_implementation": "flash_attention_2"},
+    # Load model and tokenizer directly
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    model = AutoModelForCausalLM.from_pretrained(
+        args.model,
+        torch_dtype=torch.bfloat16,
+        attn_implementation="flash_attention_2",
         device_map="auto",
     )
 
-    terminators = [
-        pipeline.tokenizer.eos_token_id, # type: ignore
-        pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>") # type: ignore
-    ]
+    # Set up generation config
+    generation_config = model.generation_config
+    generation_config.do_sample = not args.greedy
+    generation_config.temperature = 1.0 if args.greedy else 0.7
+    generation_config.top_p = None if args.greedy else 0.9
+    generation_config.max_new_tokens = 2000
+    generation_config.pad_token_id = tokenizer.pad_token_id
 
-    all_messages = []
-    messages = []
+    # Set up EOS tokens
+    terminators = [tokenizer.eos_token_id]
+    eot_id = tokenizer.convert_tokens_to_ids("<|eot_id|>")
+    if eot_id != tokenizer.unk_token_id:
+        terminators.append(eot_id)
+    generation_config.eos_token_id = terminators
+
     results = {}
+    past_key_values = None
+    conversation = []
+    current_context = []
 
-    def send_message(msg):
-        prompt = pipeline.tokenizer.apply_chat_template( # type: ignore
-                messages,
-                tokenize=False,
-                add_generation_prompt=True
+    def tokenize_context() -> torch.Tensor:
+        """Tokenize the current context."""
+        context = tokenizer.apply_chat_template(
+            current_context,
+            tokenize=True,
+            truncation=True,
+            truncation_side="left",
+            add_generation_prompt=False,
+            return_tensors="pt",
         )
-        outputs = None
-        while outputs is None:
-            try:
-                outputs = pipeline(
-                    prompt,
-                    max_new_tokens=2000,
-                    eos_token_id=terminators,
-                    pad_token_id=pipeline.tokenizer.pad_token_id, # type: ignore
-                    do_sample=not args.greedy,
-                    temperature=1.0 if args.greedy else 0.7,
-                    top_p=None if args.greedy else 0.9,
-                )
-            except RuntimeError as e:
-                # If e is OOM, remove a message from the beginning of the conversation
-                if "CUDA out of memory" in str(e):
-                    logging.warning("CUDA out of memory, removing a message from the beginning of the conversation.")
-                    torch.cuda.empty_cache()
-                    gc.collect()
-                    if messages:
-                        messages.pop(0)
-                    else:
-                        logging.error("No more messages to remove, cannot recover from OOM.")
-                        exit(1)
-        generated_text = outputs[0]["generated_text"][len(prompt):] # type: ignore
-        return generated_text
+        return context
+
+    def run_model() -> tuple[str, Optional[torch.Tensor]]:
+        nonlocal past_key_values
+        inputs = tokenize_context()
+        if inputs.size(1) > 7000:
+            while inputs.size(1) > 4000:
+                # If the context is too long, remove the oldest message
+                logging.info("The context is too long, removing the oldest message.")
+                current_context.pop(0)
+                inputs = tokenize_context()
+                past_key_values = None
+        inputs = inputs.to(model.device)
+
+        try:
+            outputs = model.generate(
+                inputs,
+                past_key_values=past_key_values,
+                pad_token_id=tokenizer.eos_token_id,
+                generation_config=generation_config,
+                use_cache=True,
+                return_dict_in_generate=True,
+                output_scores=False,
+            )
+        except RuntimeError:
+            outputs = model.generate(
+                inputs,
+                past_key_values=None,
+                pad_token_id=tokenizer.eos_token_id,
+                generation_config=generation_config,
+                use_cache=True,
+                return_dict_in_generate=True,
+                output_scores=False,
+            )
+
+        # Decode only the newly generated tokens
+        generated_text = tokenizer.decode(
+            outputs.sequences[0][inputs.shape[1]:],
+            skip_special_tokens=True
+        )
+
+        return generated_text, outputs.past_key_values
 
     with open(f"prompts/{args.prompt_type}.{args.lng}.txt", "r") as f, open("validators.txt", "r") as v:
         questions = f.readlines()
         validators = v.readlines()
 
+
     for question, validator in zip(questions, validators):
         q_id, question = question.strip().split(";", maxsplit=1)
         logging.info(f"Processing {q_id}: {len(results) + 1} / {len(questions)}")
+        logging.info("Question: %s" % question)
         validator = validator.strip()
-        messages.append({"role": "user", "content": question})
-        all_messages.append({"role": "user", "content": question})
+
+        quest_dict = {"role": "user", "content": question}
+        conversation.append(quest_dict)
+        current_context.append(quest_dict)
+
         start_time = datetime.now()
         attempts = 0
+        answer = ""
+
         while results.get(q_id) is None:
             attempts += 1
-            answer = send_message(question)
-            results[q_id] = VALIDATORS[validator](answer) # type: ignore
-            # If the answer is not valid, try again, but with greedy decoding,
-            # it is always the same answer
+            answer, maybe_past_key_values = run_model()
+            results[q_id] = VALIDATORS[validator](answer)
+            if results[q_id] is not None:
+                past_key_values = maybe_past_key_values
+                answer_dict = {"role": "assistant", "content": answer}
+                conversation.append(answer_dict)
+                current_context.append(answer_dict)
+                break
+
+            # If the answer is not valid, try again
             if attempts > (2 if args.greedy else 20):
                 logging.warning("Too many attempts, skipping to the next question.")
-                answer = ""
+                # Pretend the question was never asked for the context
+                current_context.pop()
+                # For the log, admit we do not know the answer
+                conversation.append(None)
                 break
-        messages.append({"role": "assistant", "content": answer})
-        all_messages.append({"role": "assistant", "content": answer})
+
         duration = datetime.now() - start_time
-
+        logging.info("Answer: %s" % answer)
         logging.info("The last prompt took %s with %d attempts." % (duration, attempts))
-        logging.info("History has %d messages." % len(messages))
-        logging.info("torch.cuda.memory_allocated: %fGB"%(torch.cuda.memory_allocated(0)/1024/1024/1024))
-        logging.info("torch.cuda.memory_reserved: %fGB"%(torch.cuda.memory_reserved(0)/1024/1024/1024))
-        logging.info("torch.cuda.max_memory_reserved: %fGB"%(torch.cuda.max_memory_reserved(0)/1024/1024/1024))
-
-        if len(messages) > args.max_history:
-            messages = messages[-args.max_history:]
+        if past_key_values is not None:
+            logging.info("The current context is %d tokens." % past_key_values[0][0].shape[2])
+        else:
+            logging.info("There is no past key values.")
+        logging.info("torch.cuda.memory_allocated: %fGB" % (torch.cuda.memory_allocated(0)/1024/1024/1024))
+        logging.info("torch.cuda.memory_reserved: %fGB" % (torch.cuda.memory_reserved(0)/1024/1024/1024))
+        logging.info("torch.cuda.max_memory_reserved: %fGB" % (torch.cuda.max_memory_reserved(0)/1024/1024/1024))
 
     # Print results as a JSON object
-    print(json.dumps({"messages": all_messages, "results": results}, indent=2))
-
+    print(json.dumps({"messages": conversation, "results": results}, indent=2))
 
 if __name__ == "__main__":
     main()
